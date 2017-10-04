@@ -6,10 +6,10 @@
 #
 #
 package 'postgresql\-server' do
-	notifies :run , 'exeute[postgresql\-init]'
+	notifies :run , 'exeute[postgresql\-init]', :immediately
 end
 
-execute 'postgresql\-init' do
+execute 'postgresql-init' do
 	command 'postgresql\-setup initdb'
 	action :nothing
 end
